@@ -7,6 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'yum-epel::default'
+include_recipe 'yum-remi::default'
+
 # yum_repository 'epel' do
 #   enabled false
 # end

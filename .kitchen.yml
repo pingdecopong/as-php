@@ -12,8 +12,6 @@ platforms:
 suites:
   - name: centos6_php53
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
@@ -22,8 +20,6 @@ suites:
           - centos-7.1
   - name: centos6_php54
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
@@ -32,8 +28,6 @@ suites:
           - centos-7.1
   - name: centos6_php55
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
@@ -42,8 +36,6 @@ suites:
           - centos-7.1
   - name: centos6_php56
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
@@ -52,8 +44,6 @@ suites:
           - centos-7.1
   - name: centos7_php54
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
@@ -62,8 +52,6 @@ suites:
           - centos-6.6
   - name: centos7_php55
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
@@ -72,8 +60,6 @@ suites:
           - centos-6.6
   - name: centos7_php56
     run_list:
-      - recipe[yum-epel::default]
-      - recipe[yum-remi::default]
       - recipe[as-php::default]
     attributes:
       php:
