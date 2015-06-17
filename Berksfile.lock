@@ -4,7 +4,7 @@ DEPENDENCIES
     metadata: true
 
 GRAPH
-  as-php (0.0.1)
+  as-php (0.0.3)
     yum-epel (>= 0.0.0)
     yum-remi (>= 0.0.0)
   yum (3.6.1)

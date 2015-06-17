@@ -392,7 +392,7 @@ disable_functions =
 disable_classes =
 
 ; Colors for Syntax Highlighting mode.  Anything that's acceptable in
-; <span style="color: ???????"> would work.
+; <%= '<span style="color: ???????">' %> would work.
 ; http://www.php.net/manual/en/misc.configuration.php#ini.syntax-highlighting
 ;highlight.string  = #DD0000
 ;highlight.comment = #FF9900
@@ -437,7 +437,7 @@ expose_php = On
 
 ; Maximum execution time of each script, in seconds
 ; http://www.php.net/manual/en/info.configuration.php#ini.max-execution-time
-max_execution_time = 30     
+max_execution_time = <%= node['php']['max_execution_time'] %>
 
 ; Maximum amount of time each script may spend parsing request data. It's a good
 ; idea to limit this time on productions servers in order to eliminate unexpectedly
@@ -454,7 +454,7 @@ max_input_time = 60
 
 ; Maximum amount of memory a script may consume (128MB)
 ; http://www.php.net/manual/en/ini.core.php#ini.memory-limit
-memory_limit = 128M
+memory_limit = <%= node[ :php ][ :memory_limit] %>
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ; Error handling and logging ;
@@ -619,13 +619,13 @@ html_errors = Off
 ; this setting blank.
 ; http://www.php.net/manual/en/errorfunc.configuration.php#ini.error-prepend-string
 ; Example:
-;error_prepend_string = "<font color=#ff0000>"
+;error_prepend_string = "<%= '<font color=#ff0000>' %>"
 
 ; String to output after an error message. PHP's default behavior is to leave
 ; this setting blank.
 ; http://www.php.net/manual/en/errorfunc.configuration.php#ini.error-append-string
 ; Example:
-;error_append_string = "</font>"
+;error_append_string = "<%= '</font>' %>"
 
 ; Log errors to specified file. PHP's default behavior is to leave this value
 ; empty.
@@ -726,7 +726,7 @@ auto_globals_jit = On
 
 ; Maximum size of POST data that PHP will accept.
 ; http://www.php.net/manual/en/ini.core.php#ini.post-max-size
-post_max_size = 8M
+post_max_size = <%= node[ :php ][ :post_max_size ] %>
 
 ; Magic quotes are a preprocessing feature of PHP where PHP will attempt to
 ; escape any character sequences in GET, POST, COOKIE and ENV data which might
@@ -875,7 +875,7 @@ file_uploads = On
 
 ; Maximum allowed size for uploaded files.
 ; http://www.php.net/manual/en/ini.core.php#ini.upload-max-filesize
-upload_max_filesize = 2M
+upload_max_filesize = <%= node[ :php ][ :upload_max_filesize ] %>
 
 ;;;;;;;;;;;;;;;;;;
 ; Fopen wrappers ;
@@ -943,7 +943,7 @@ default_socket_timeout = 60
 [Date]
 ; Defines the default timezone used by the date functions
 ; http://www.php.net/manual/en/datetime.configuration.php#ini.date.timezone
-;date.timezone =
+date.timezone = <%= node[ :php ][ 'data.timezone' ] %>
 
 ; http://www.php.net/manual/en/datetime.configuration.php#ini.date.default-latitude
 ;date.default_latitude = 31.7667
@@ -1432,7 +1432,7 @@ session.hash_bits_per_character = 5
 
 ; The URL rewriter will look for URLs in a defined set of HTML tags.
 ; form/fieldset are special; if you include them here, the rewriter will
-; add a hidden <input> field with the info which is otherwise appended
+; add a hidden <%= '<input>' %> field with the info which is otherwise appended
 ; to URLs.  If you want XHTML conformity, remove the form entry.
 ; Note that all valid entries require a "=", even if no value follows.
 ; Default Value: "a=href,area=href,frame=src,form=,fieldset="
@@ -1660,7 +1660,7 @@ soap.wsdl_cache_ttl=86400
 
 
 [xdebug]
-<% if node['php']['xdebug']['remote_enable'] then %>
+<% if node['php']['xdebug']['remote_enable'] %>
 xdebug.remote_enable=1
 xdebug.remote_handler = "dbgp"
 xdebug.max_nesting_level=1000

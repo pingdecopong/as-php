@@ -16,6 +16,8 @@ suites:
     attributes:
       php:
         version: '5.3'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-7.1
   - name: centos6_php54
@@ -24,6 +26,8 @@ suites:
     attributes:
       php:
         version: '5.4'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-7.1
   - name: centos6_php55
@@ -32,6 +36,8 @@ suites:
     attributes:
       php:
         version: '5.5'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-7.1
   - name: centos6_php56
@@ -40,6 +46,8 @@ suites:
     attributes:
       php:
         version: '5.6'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-7.1
   - name: centos7_php54
@@ -48,6 +56,8 @@ suites:
     attributes:
       php:
         version: '5.4'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-6.6
   - name: centos7_php55
@@ -56,6 +66,8 @@ suites:
     attributes:
       php:
         version: '5.5'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-6.6
   - name: centos7_php56
@@ -64,5 +76,7 @@ suites:
     attributes:
       php:
         version: '5.6'
+        xdebug:
+          remote_enable: true
     excludes:
           - centos-6.6
